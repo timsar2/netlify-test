@@ -1,4 +1,4 @@
 [build]
-command = "ng build shared && ng build client"
+command = "npm run build:ssr"
 functions = "netlify/functions"
 publish = "dist/client/browser"
