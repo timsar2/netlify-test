@@ -41,6 +41,9 @@ importers:
       '@netlify/angular-runtime':
         specifier: ^2.2.2
         version: 2.2.2
+      '@netlify/functions':
+        specifier: ^3.0.1
+        version: 3.0.1
       express:
         specifier: ^4.18.2
         version: 4.21.2
@@ -1308,6 +1311,14 @@ packages:
   '@netlify/angular-runtime@2.2.2':
     resolution: {integrity: sha512-V4iuXIUNPG4g9If7WkbBzETrRj2jUU9Y3qQigXHH7ei5YJgMl92L8W+aQM32+vSEuyU1sJSCUrWAO8ZaCAIltg==}
     engines: {node: '>=18.13.0'}
+
+  '@netlify/functions@3.0.1':
+    resolution: {integrity: sha512-KqVvGatPnn3lw80vXsFbYV3H2S9FI9TQHneFVR6BBvfHWiqTvs8NwUoBpnUWgqPKKeUMuynycDabeSi9CW2WWw==}
+    engines: {node: '>=18.0.0'}
+
+  '@netlify/serverless-functions-api@1.35.0':
+    resolution: {integrity: sha512-BH9eF3s7bUbqkcEUMR7dne/iCXSpZD10KVkGcs53eDrON5pKxsMdXvrdAx/q0HD24vJgHXGXObGSr5sjPllGEA==}
+    engines: {node: '>=18.0.0'}
 
   '@ngtools/webpack@19.2.1':
     resolution: {integrity: sha512-K8b3+eCG+Iz0EXTE/UDuXabr6yOL9NP6sW1CLk9AUdUUnL4AhoQy/vjfaOtxZx1T8qEErAWizJ51dHD25ysXHw==}
@@ -5649,6 +5660,12 @@ snapshots:
     dependencies:
       fs-extra: 11.3.0
       semver: 7.7.1
+
+  '@netlify/functions@3.0.1':
+    dependencies:
+      '@netlify/serverless-functions-api': 1.35.0
+
+  '@netlify/serverless-functions-api@1.35.0': {}
 
   '@ngtools/webpack@19.2.1(@angular/compiler-cli@19.2.1(@angular/compiler@19.2.1(@angular/core@19.2.1(rxjs@7.8.2)(zone.js@0.15.0)))(typescript@5.7.3))(typescript@5.7.3)(webpack@5.98.0(esbuild@0.25.0))':
     dependencies:

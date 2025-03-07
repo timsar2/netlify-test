@@ -1,4 +1,5 @@
-import { Component, signal } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, PLATFORM_ID, signal } from '@angular/core';
 
 @Component({
   selector: 'lib-shared',
@@ -11,10 +12,22 @@ import { Component, signal } from '@angular/core';
   styles: ``
 })
 export class SharedComponent {
-  counter = signal<number>(0)
-  constructor(){
-    setInterval(() => {
-      this.counter.set(this.counter() + 1)
-    }, 1000)
+  counter = signal<string>("0")
+  private intervalId: any
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
+  ngOnInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      this.intervalId = setInterval(() => {
+        this.counter.set('Random ' + Math.random())
+      }, 1000)
+    }
+  }
+
+  ngOnDestroy() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId)
+    }
   }
 }
